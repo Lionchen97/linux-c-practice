@@ -15,7 +15,7 @@
 // MYSQL_STMT *stmt 声明占位符
 #include<stdio.h>
 #include<string.h>
-#include<mysql.h>
+#include<mysql/mysql.h>
 #define csj_DB_SERVER_IP  "192.168.77.133"
 #define csj_DB_SERVER_PORT 3306
 
