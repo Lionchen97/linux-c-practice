@@ -1,36 +1,39 @@
-// Server-Ubuntu
-// sudo apt-get install mysql-server-5.7 安装MySQL
-// sudo netstat -anp|grep mysql 查看服务器端口号
-// ifconfig 查看服务器IP
-// sudo vim /etc/mysql/mysql.conf/mysqld.cnf 修改bind_address 0.0.0.0
-// mysql -u root -p 登录
-// sudo /etc/init.d/mysql restart 重启
-// sudo service mysql restart 重启
-// sudo apt-get install libmysqlclient-dev
-// gcc -o a a.c -I /usr/include/mysql/ -lmysqlclient
 
-// NodeServer-Windows 
-// C- R - U - D 工程师
-// MYSQL *handle 类似于ns和s之间的管道
-// MYSQL_STMT *stmt 声明占位符
+/*
+sudo netstat -anp|grep mysql 查看服务器端口号
+ifconfig 查看服务器IP
+
+
+mysql -u root -p 登录
+sudo /etc/init.d/mysql restart 重启
+sudo service mysql restart 重启
+systemctl restart mysqld   重启
+
+
+
+NodeServer-Windows
+C- R - U - D 工程师
+MYSQL *handle 类似于ns和s之间的管道
+MYSQL_STMT *stmt 声明占位符
+*/
 #include<stdio.h>
 #include<string.h>
 #include<mysql/mysql.h>
-#define csj_DB_SERVER_IP  "192.168.77.133"
-#define csj_DB_SERVER_PORT 3306
+#define lion_DB_SERVER_IP "localhost"     // 服务器ip地址"111.229.33.65"
+#define lion_DB_SERVER_PORT 3306 // 端口
 
-#define csj_DB_USERNAME "admin"
-#define csj_DB_PASSWORD "123456"
+#define lion_DB_USERNAME "lion"
+#define lion_DB_PASSWORD "Csj19971012!"
 
-#define csj_DB_DEFAULTDB "csj_DB"
+#define lion_DB_DEFAULTDB "lion_db"
 
-#define SQL_INSERT_TBL_USER "INSERT TBL_USER(U_NAME,U_GENGDER) VALUES('chensijie','male');"
+#define SQL_INSERT_TBL_USER "INSERT TBL_USER(U_NAME,U_GENDER) VALUES('lion','male');"
 #define SQL_SELECT_TBL_USER "SELECT * FROM TBL_USER;"
-#define SQL_DELETE_TBL_USER "CALL PROC_DELETE_USER('chensijie');" //过程存储操作，存储于csj_DB数据库中
-#define SQL_INSERT_IMG_USER "INSERT TBL_USER(U_NAME,U_GENGDER,U_IMG) VALUES('chensijie','male',?);" // ? 占位符
-#define SQL_SELECT_IMG_USER "SELECT U_IMG FROM TBL_USER WHERE U_NAME='chensijie';"
+#define SQL_DELETE_TBL_USER "CALL PROC_DELETE_USER('lion');" //过程存储操作，存储于lion_DB数据库中
+#define SQL_INSERT_IMG_USER "INSERT TBL_USER(U_NAME,U_GENDER,U_IMG) VALUES('lion','male',?);" // ? 占位符
+#define SQL_SELECT_IMG_USER "SELECT U_IMG FROM TBL_USER WHERE U_NAME='lion';"
 
-#define FILE_IMAGE_LENGTH (3*207*240)
+#define FILE_IMAGE_LENGTH (3 * 600 * 600)
 int mysql_select(MYSQL *handle){
     //mysql_real_query --> sql
      if(mysql_real_query(handle,SQL_SELECT_TBL_USER,strlen(SQL_SELECT_TBL_USER))){
@@ -51,7 +54,7 @@ int mysql_select(MYSQL *handle){
     printf("cols: %d\n",cols);
     //fetch
     MYSQL_ROW row; // 游标
-    while (row = mysql_fetch_row(res))
+    while (row == mysql_fetch_row(res))
     {
         int i=0;
         for(i=0;i<cols;i++){
@@ -185,7 +188,7 @@ int main(){
         return -1;
     }
     // 连接数据库
-    if(!mysql_real_connect(&mysql,csj_DB_SERVER_IP,csj_DB_USERNAME,csj_DB_PASSWORD,csj_DB_DEFAULTDB,csj_DB_SERVER_PORT,NULL,0)){
+    if(!mysql_real_connect(&mysql,lion_DB_SERVER_IP,lion_DB_USERNAME,lion_DB_PASSWORD,lion_DB_DEFAULTDB,lion_DB_SERVER_PORT,NULL,0)){
         // 返回非0 成功
         printf("mysql_real_connect: %s\n",mysql_error(&mysql));
         return -2;
@@ -223,7 +226,7 @@ int main(){
     // mysql --> insert img
     printf("mysql --> read image and write mysql\n");
     char buffer[FILE_IMAGE_LENGTH]={0};
-    int length = read_image("./picture,pic1.jpg",buffer);
+    int length = read_image("./picture/pic1.jpg", buffer);
     printf("read img ok : %d!\n",length);
     if(length<0) goto Exit;
     mysql_write(&mysql,buffer,length);
@@ -234,7 +237,7 @@ int main(){
     memset(buffer,0,FILE_IMAGE_LENGTH);
     length = mysql_read(&mysql,buffer,length);
     printf("read sql ok : %d!\n",length);
-    int size = write_image("./picture,pic2.jpg", buffer, length);
+    int size = write_image("./picture/pic2.jpg", buffer, length);
     printf("write img ok : %d!\n",size);
 Exit:
     mysql_close(&mysql);
