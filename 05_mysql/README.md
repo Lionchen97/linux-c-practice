@@ -55,8 +55,6 @@ sudo systemctl start mysqld
 -- 查看运行状态
 sudo systemctl status mysqld
 ```
-查看运行状态
-
 
 ### 3. 运行 MySQL 安全性脚本（可选但推荐）：
 
