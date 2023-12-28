@@ -19,13 +19,13 @@ MYSQL_STMT *stmt 声明占位符
 #include<stdio.h>
 #include<string.h>
 #include<mysql/mysql.h>
-#define lion_DB_SERVER_IP "localhost"     // 服务器ip地址"111.229.33.65"
-#define lion_DB_SERVER_PORT 3306 // 端口
+#define lion_DB_SERVER_IP "localhost"     // 如果是远程服务器则需要填写服务器ip地址m，本地则不需要修改
+#define lion_DB_SERVER_PORT 3306 // 默认端口3306，需要开放端口
 
-#define lion_DB_USERNAME "lion"
-#define lion_DB_PASSWORD "Csj19971012!"
+#define lion_DB_USERNAME "name" // 数据库的用户名
+#define lion_DB_PASSWORD "password" // 该用户的数据库密码
 
-#define lion_DB_DEFAULTDB "lion_db"
+#define lion_DB_DEFAULTDB "lion_db" // 使用的数据库
 
 #define SQL_INSERT_TBL_USER "INSERT TBL_USER(U_NAME,U_GENDER) VALUES('lion','male');"
 #define SQL_SELECT_TBL_USER "SELECT * FROM TBL_USER;"
