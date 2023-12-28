@@ -101,7 +101,7 @@ int delete_entry(struct contacts *cts){
      scanf("%s",name);
      struct person *ps = person_search(cts->people,name);
      if(ps ==NULL){
-        INFO("Person don't Exit\n");
+        INFO("Person don't Exist\n");
         return -2;
      }
      //delete
@@ -119,7 +119,7 @@ int search_entry(struct contacts* cts){
      scanf("%s",name);
      struct person *ps = person_search(cts->people,name);
      if(ps ==NULL){
-        INFO("Person don't Exit\n");
+        INFO("Person don't Exist\n");
         return -2;
      }
      INFO("name:%s,phone:%s\n",ps->name,ps->phone);
