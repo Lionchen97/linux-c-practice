@@ -251,5 +251,6 @@ sudo ldconfig
 find /usr/lib* /lib* -name 'libmysqlclient.so.*'
 sudo ln -s /usr/lib64/mysql/libmysqlclient.so.20 /usr/lib64/mysql/libmysqlclient.so.18
 # 再重新编译
+gcc -o crud crud.c  -I /usr/include/mysql/ -L /usr/lib64/mysql -lmysqlclient
 ```
 
