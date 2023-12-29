@@ -2,17 +2,6 @@
 /*
 sudo netstat -anp|grep mysql 查看服务器端口号
 ifconfig 查看服务器IP
-
-
-mysql -u root -p 登录
-sudo /etc/init.d/mysql restart 重启
-sudo service mysql restart 重启
-systemctl restart mysqld   重启
-
-
-
-NodeServer-Windows
-C- R - U - D 工程师
 MYSQL *handle 类似于ns和s之间的管道
 MYSQL_STMT *stmt 声明占位符
 */
