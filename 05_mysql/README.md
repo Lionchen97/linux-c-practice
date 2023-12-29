@@ -55,8 +55,6 @@ sudo systemctl start mysqld
 -- 查看运行状态
 sudo systemctl status mysqld
 ```
-查看运行状态
-
 
 ### 3. 运行 MySQL 安全性脚本（可选但推荐）：
 
@@ -253,5 +251,6 @@ sudo ldconfig
 find /usr/lib* /lib* -name 'libmysqlclient.so.*'
 sudo ln -s /usr/lib64/mysql/libmysqlclient.so.20 /usr/lib64/mysql/libmysqlclient.so.18
 # 再重新编译
+gcc -o crud crud.c  -I /usr/include/mysql/ -L /usr/lib64/mysql -lmysqlclient
 ```
 
