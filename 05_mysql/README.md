@@ -193,11 +193,10 @@ CREATE TABLE IF NOT EXISTS TBL_USER (
     U_IMG BLOB
 );
 ```
-创建好的表如下所示：
-<div style="text-align:center">
-    创建好的表如下所示：<br>
+创建好的表如下所示：<br>
+
     ![table](IMG/table.jpg)
-</div>
+
 ```sql
 -- 创建 PROC_DELETE_USER 存储过程
 DELIMITER //
