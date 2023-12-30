@@ -183,7 +183,7 @@ sudo sudo apt-get install libmysqlclient-dev
 -- 创建数据库 your_database_name
 CREATE DATABASE IF NOT EXISTS your_database_name;
 -- 使用数据库 your_database_name
-USE lion_db;
+USE your_database_name;
 -- 创建表 TBL_USER
 CREATE TABLE IF NOT EXISTS TBL_USER (
     U_ID INT AUTO_INCREMENT PRIMARY KEY,
