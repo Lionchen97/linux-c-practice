@@ -212,14 +212,14 @@ DELIMITER ;
 CALL PROC_DELETE_USER('specific_username');
 
 -- 设置默认数据库
-USE lion_db;
+USE your_database_name;
 
 ```
-- `CREATE DATABASE` 语句用于在数据库不存在时创建 `lion_db` 数据库。
-- `USE lion_db;` 语句选择 `lion_db` 数据库以进行后续操作。
+- `CREATE DATABASE` 语句用于在数据库不存在时创建 `your_database_name` 数据库。
+- `USE your_database_name;` 语句选择 `USE your_database_name;` 数据库以进行后续操作。
 - `CREATE TABLE` 语句用于创建具有 `U_ID`、`U_NAME`、`U_GENDER` 和 `U_IMG`（假设 `U_IMG` 是二进制大对象，BLOB）列的 `TBL_USER` 表。
 - `CREATE PROCEDURE` 语句用于创建 `PROC_DELETE_USER` 存储过程，该过程接受用户名作为输入，并从 `TBL_USER` 表中删除相应的用户。
-- 最后，`USE lion_db;` 语句确保默认数据库设置为 `lion_db`。
+- 最后，`USE USE your_database_name;` 语句确保默认数据库设置为 `your_database_name`。
 
 修改表
 ```sql
