@@ -198,6 +198,9 @@ CREATE TABLE IF NOT EXISTS TBL_USER (
 <div style="text-align:center;">
   <img src="IMG/table.jpg" alt="table">
 </div>
+<p align="center">
+  <img src="IMG/table.jpg" />
+</p>
 
 ```sql
 -- 创建 PROC_DELETE_USER 存储过程
