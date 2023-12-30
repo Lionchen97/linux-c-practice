@@ -224,7 +224,7 @@ USE your_database_name;
 修改表（可选）
 ```sql
 ALTER TABLE your_table MODIFY COLUMN U_IMG LONGBLOB;
--- 将 age 列的属性更改为不允许为 NULL
+-- 将 U_GENDER 列的属性更改为不允许为 NULL
 ALTER TABLE your_table_name MODIFY COLUMN U_GENDER VARCHAR(10) NOT NULL;
 
 ```
