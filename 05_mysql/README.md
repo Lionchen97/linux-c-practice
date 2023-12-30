@@ -178,7 +178,8 @@ sudo sudo apt-get install libmysqlclient-dev
 
    输入 MySQL 的 your_user 用户密码以登录。
 
-### 2. 创建数据库
+### 2. 数据库编程
+
 ```sql
 -- 创建数据库 your_database_name
 CREATE DATABASE IF NOT EXISTS your_database_name;
@@ -193,7 +194,10 @@ CREATE TABLE IF NOT EXISTS TBL_USER (
 );
 ```
 创建好的表如下所示：
-![table](IMG/table.jpg)
+<div style="text-align:center">
+    创建好的表如下所示：<br>
+    ![table](IMG/table.jpg)
+</div>
 ```sql
 -- 创建 PROC_DELETE_USER 存储过程
 DELIMITER //
