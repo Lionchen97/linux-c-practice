@@ -195,9 +195,6 @@ CREATE TABLE IF NOT EXISTS TBL_USER (
 ```
 创建好的表如下所示：<br>
 
-<div style="text-align:center;">
-  <img src="IMG/table.jpg" alt="table">
-</div>
 <p align="center">
   <img src="IMG/table.jpg" />
 </p>
