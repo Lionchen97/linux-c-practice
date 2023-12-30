@@ -250,7 +250,7 @@ gcc -o crud crud.c  -I /usr/include/mysql/ -L /usr/lib64/mysql -lmysqlclient
 ./crud
 ```
 - `-I /usr/include/mysql/` 如不存在，需要安装mysql头文件包（流程的第二步）
-- `-L /usr/lib64/mysql` 用于指定链接器查找MySQL库文件的路径，需要安装MySQL（流程的第一步）
+- `-L /usr/lib64/mysql` 用于指定链接器查找MySQL库文件的路径，需要安装MySQL（流程的第一步）。
 如果找不到mysql可以使用以下命令
 ```bash
 mysql_config --libs
