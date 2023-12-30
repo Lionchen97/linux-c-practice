@@ -192,7 +192,7 @@ CREATE TABLE IF NOT EXISTS TBL_USER (
     U_IMG BLOB
 );
 创建好的表如下所示：
-![table](IMG/table.jpg)
+![table](./IMG/table.jpg)
 
 
 -- 创建 PROC_DELETE_USER 存储过程
