@@ -191,10 +191,10 @@ CREATE TABLE IF NOT EXISTS TBL_USER (
     U_GENDER VARCHAR(10),
     U_IMG BLOB
 );
+```
 创建好的表如下所示：
-![table](./IMG/table.jpg)
-
-
+![table](05_mysql/IMG/table.jpg)
+```sql
 -- 创建 PROC_DELETE_USER 存储过程
 DELIMITER //
 CREATE PROCEDURE  IF NOT EXISTS PROC_DELETE_USER(IN username VARCHAR(255))
