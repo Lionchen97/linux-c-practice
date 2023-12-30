@@ -221,9 +221,12 @@ USE your_database_name;
 - `CREATE PROCEDURE` 语句用于创建 `PROC_DELETE_USER` 存储过程，该过程接受用户名作为输入，并从 `TBL_USER` 表中删除相应的用户。
 - 最后，`USE USE your_database_name;` 语句确保默认数据库设置为 `your_database_name`。
 
-修改表
+修改表（可选）
 ```sql
 ALTER TABLE your_table MODIFY COLUMN U_IMG LONGBLOB;
+-- 将 age 列的属性更改为不允许为 NULL
+ALTER TABLE your_table_name MODIFY COLUMN U_GENDER VARCHAR(10) NOT NULL;
+
 ```
 查看当前所有的数据库
 ```sql
