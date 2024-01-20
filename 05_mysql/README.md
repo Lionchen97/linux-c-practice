@@ -112,7 +112,7 @@ sudo vim /etc/mysql/mysql.conf/mysqld.cnf
 ```
 ##### Server-Centos/RHEL
 ```bash
-sudo vim etc/my.cnf 
+sudo vim /etc/my.cnf 
 ```
 #### 如果在创建用户或更改密码时遇到 ERROR 1819，说明您的密码不符合当前密码策略的要求。
 1. 使用符合要求的密码：
