@@ -70,6 +70,20 @@ sudo mysql_secure_installation
 mysql -u root -p 
 -输入密码
 ```
+如果创建时，root的密码是随机生成的，不知道root密码，通过修改`/etc/my.cnf`，添加`skip-grant-tables`实现免密登录，再修改root密码。
+```shell
+$ vim /etc/my.cnf
+# 插入一行
+skip-grant-tables
+```
+登录并修改root密码
+```bash
+$ mysql -uroot
+```
+```mysql
+mysql->FLUSH PRIVILEGES;
+mysql->ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
+```
 
 ### 5. 创建用户和数据库：
 
